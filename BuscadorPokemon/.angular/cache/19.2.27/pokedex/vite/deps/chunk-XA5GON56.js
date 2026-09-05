@@ -1,10 +1,4 @@
 import {
-  DOCUMENT,
-  XhrFactory,
-  isPlatformServer,
-  parseCookieValue
-} from "./chunk-GVSKDZNY.js";
-import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
   Console,
@@ -16,43 +10,67 @@ import {
   Injector,
   NgModule,
   NgZone,
+  Observable,
   PLATFORM_ID,
   PendingTasksInternal,
   ResourceImpl,
   ResourceStatus,
   RuntimeError,
   TransferState,
+  __async,
+  __objRest,
+  __spreadValues,
   assertInInjectionContext,
   computed,
+  concatMap,
+  filter,
+  finalize,
   formatRuntimeError,
+  from,
   inject,
   linkedSignal,
   makeEnvironmentProviders,
   makeStateKey,
+  map,
+  of,
   performanceMarkFeature,
   runInInjectionContext,
   setClassMetadata,
   signal,
+  switchMap,
+  tap,
   truncateMiddle,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-EAAUV2ZZ.js";
-import {
-  Observable,
-  __async,
-  __objRest,
-  __spreadValues,
-  concatMap,
-  filter,
-  finalize,
-  from,
-  map,
-  of,
-  switchMap,
-  tap
-} from "./chunk-ZNCRG6OU.js";
+} from "./chunk-I3CU5RX3.js";
+
+// node_modules/@angular/common/fesm2022/xhr-BfNfxNDv.mjs
+function parseCookieValue(cookieStr, name) {
+  name = encodeURIComponent(name);
+  for (const cookie of cookieStr.split(";")) {
+    const eqIndex = cookie.indexOf("=");
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ""] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+    if (cookieName.trim() === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+var PLATFORM_BROWSER_ID = "browser";
+var PLATFORM_SERVER_ID = "server";
+function isPlatformBrowser(platformId) {
+  return platformId === PLATFORM_BROWSER_ID;
+}
+function isPlatformServer(platformId) {
+  return platformId === PLATFORM_SERVER_ID;
+}
+var XhrFactory = class {
+};
+
+// node_modules/@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs
+var DOCUMENT = new InjectionToken(ngDevMode ? "DocumentToken" : "");
 
 // node_modules/@angular/common/fesm2022/module-JS82OH2B.mjs
 var HttpHandler = class {
@@ -2517,6 +2535,12 @@ function appendMissingHeadersDetection(url, headers, headersToInclude) {
 }
 
 export {
+  parseCookieValue,
+  PLATFORM_BROWSER_ID,
+  isPlatformBrowser,
+  isPlatformServer,
+  XhrFactory,
+  DOCUMENT,
   HttpHandler,
   HttpBackend,
   HttpHeaders,
@@ -2559,6 +2583,8 @@ export {
 };
 /*! Bundled license information:
 
+@angular/common/fesm2022/xhr-BfNfxNDv.mjs:
+@angular/common/fesm2022/dom_tokens-rA0ACyx7.mjs:
 @angular/common/fesm2022/module-JS82OH2B.mjs:
 @angular/common/fesm2022/http.mjs:
   (**
@@ -2567,4 +2593,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-7OPD7CHE.js.map
+//# sourceMappingURL=chunk-XA5GON56.js.map

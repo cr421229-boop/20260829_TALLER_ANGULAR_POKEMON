@@ -1,53 +1,14 @@
-<main class="page">
-  <header class="header">
-    <div class="badge">PokeAPI</div>
-    <h1 class="title">Pokedex</h1>
-    <p class="subtitle">Busca un Pokemon por nombre o numero y consulta su imagen.</p>
-  </header>
+<header>
+  <h1>{{ titulo }}</h1>
 
-  <form class="search" (ngSubmit)="search()">
-    <input
-      class="search-input"
-      type="text"
-      name="query"
-      [(ngModel)]="query"
-      placeholder="Ej: pikachu, charizard o 25"
-      autocomplete="off"
-      aria-label="Nombre o numero del Pokemon"
-    />
-    <button class="search-button" type="submit" [disabled]="loading">
-      {{ loading ? 'Buscando...' : 'Buscar' }}
-    </button>
-  </form>
+  <nav>
+    <ul>
+      <li><a routerLink="/registro" routerLinkActive="active">Registro</a></li>
+      <li><a routerLink="/buscador" routerLinkActive="active">Buscador</a></li>
+    </ul> 
+  </nav>
+</header>
 
-  <section class="results" aria-live="polite">
-    <p class="error" *ngIf="error">{{ error }}</p>
-
-    <div class="card" *ngIf="pokemon && !error">
-      <div class="card-image">
-        <img [src]="pokemon.image" [alt]="pokemon.name" width="220" height="220" />
-      </div>
-      <div class="card-body">
-        <span class="card-id">{{ formatId(pokemon.id) }}</span>
-        <h2 class="card-name">{{ pokemon.name }}</h2>
-        <div class="types">
-          <span class="type" *ngFor="let type of pokemon.types">{{ type }}</span>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <span class="stat-label">Altura</span>
-            <span class="stat-value">{{ pokemon.height / 10 }} m</span>
-          </div>
-          <div class="stat">
-            <span class="stat-label">Peso</span>
-            <span class="stat-value">{{ pokemon.weight / 10 }} kg</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="placeholder" *ngIf="!pokemon && !error && !loading">
-      <p>Escribe el nombre de un Pokemon y presiona Buscar.</p>
-    </div>
-  </section>
+<main>
+  <router-outlet></router-outlet>
 </main>
