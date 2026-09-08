@@ -1,0 +1,92 @@
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #6b46c1;
+  width: 100%;
+}
+
+
+form {
+  background-color: #ffffff;
+  border: 1px solid #d8b4fe;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(155, 109, 255, 0.2);
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  margin: 30px auto;
+}
+
+
+label {
+  font-weight: 600;
+  color: #7c3aed;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd6fe;
+  border-radius: 8px;
+  background-color: #faf5ff;
+  color: #4c1d95;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+
+
+input[type="checkbox"] {
+  accent-color: #a855f7;
+  margin-right: 8px;
+}
+
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #c084fc;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+input[type="submit"]:hover {
+  background-color: #a855f7;
+}
+
+input[type="submit"]:active {
+  transform: scale(0.98);
+}
