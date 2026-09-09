@@ -1,18 +1,16 @@
-<body>
+<section>
   <h1 id="titulo_formulario">Formulario de Contacto</h1>
-  <div>
-  <form id="form_contacto">
 
+  <form id="form_contacto" (ngSubmit)="guardarUsuario()">
     <div id="Nombre">
-    <from id='formularioRegistro' (ngSubmit)="guardarUsuario()">
       <label for="nombre">Nombre:</label><br>
-      <input type="text" id="nombre" [(ngModel)]="nombre" placeholder="Ej: Juan" required>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ej: Juan" required>
     </div>
     <br>
 
     <div id="Apellido">
       <label for="apellido">Apellido:</label><br>
-      <input type="text" id="apellido" [(ngModel)]="apellido" placeholder="Ej: Pérez" required>
+      <input type="text" id="apellido" name="apellido" [(ngModel)]="apellido" placeholder="Ej: Pérez" required>
     </div>
     <br>
 
@@ -29,19 +27,19 @@
 
     <div id="Numero_identificacion">
       <label for="numero_identificacion">Número de Identificación:</label><br>
-      <input type="text" id="numero_identificacion" [(ngModel)]="numero_identificacion" placeholder="Ej: 1020304050" required>
+      <input type="text" id="numero_identificacion" name="numero_de_identificacion" [(ngModel)]="numero_de_identificacion" placeholder="Ej: 1020304050" required>
     </div>
     <br>
 
     <div id="Fecha_nacimiento">
       <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
-      <input type="date" id="fecha_nacimiento" [(ngModel)]="fecha_nacimiento" placeholder="dd/mm/aaaa" required>
+      <input type="date" id="fecha_nacimiento" name="fecha_de_nacimiento" [(ngModel)]="fecha_de_nacimiento" required>
     </div>
     <br>
 
     <div id="Celular">
       <label for="celular">Número de Celular:</label><br>
-      <input type="tel" id="celular" [(ngModel)]="celular" pattern="[0-9]{10}" placeholder="3001234567" required>
+      <input type="tel" id="celular" name="numero_de_celular" [(ngModel)]="numero_de_celular" pattern="[0-9]{10}" placeholder="3001234567" required>
     </div>
     <br>
 
@@ -49,7 +47,7 @@
       <label for="pais">País:</label><br>
       <select id="pais" name="pais" [(ngModel)]="pais" required>
         <option value="" disabled>Seleccionar</option>
-        <option value="169 - Colombia" selected>Colombia</option>
+        <option value="169 - Colombia">Colombia</option>
         <option value="493 - México">México</option>
         <option value="589 - Perú">Perú</option>
       </select>
@@ -86,29 +84,25 @@
     <br>
 
     <div id="Politica_datos">
-      <input type="checkbox" id="politica_datos" name="politica_datos" required>
+      <input type="checkbox" id="politica_datos" name="politica_datos" [(ngModel)]="datos_personales" required>
       <label for="politica_datos">Acepto la política de tratamiento de datos.</label>
     </div>
     <br>
 
     <div id="Submit">
-      <input type="submit" id="boton_enviar" value="Enviar">
+      <button type="submit" id="boton_enviar">Enviar</button>
     </div>
-
   </form>
-  </div>
 
   @if (ultimoUsuario(); as user) {
     <div id="usuario-registrado">
       <h2>Usuario Registrado:</h2>
-      <p><strong>Nombre Completo:</strong> {{ user.id }}</p>
+      <p><strong>Nombre Completo:</strong> {{ user.nombreCompleto }}</p>
       <p><strong>Lugar de Nacimiento:</strong> {{ user.LugarNacimiento.pais }}, {{ user.LugarNacimiento.ciudad }}</p>
       <p><strong>Documento:</strong> {{ user.documento.tipo }} - {{ user.documento.numero }}</p>
-      <p><strong>Fecha de Nacimiento:</strong> {{ user.fechaNacimiento }}</p>
-      <p><strong>Número de Celular:</strong> {{ user.numeroCelular }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha }}</p>
+      <p><strong>Número de Celular:</strong> {{ user.numero }}</p>
       <p><strong>Fecha de Registro:</strong> {{ user.fechaRegistro }}</p>
     </div>
   }
-  <script src="js/script.js"></script>
-</body>
-</html>
+</section>
