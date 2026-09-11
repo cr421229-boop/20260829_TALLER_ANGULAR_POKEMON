@@ -19,6 +19,11 @@ export class PokemonStorageService {
   private readonly STORAGE_KEY = 'equipo_pokemon_registrado';
 
   misPokemons = signal<PokemonTarjeta[]>([]);
+
+  misPokemon() {
+    return this.misPokemons();
+  }
+
   constructor() {
     this.cargarDesdeStorage();
   }

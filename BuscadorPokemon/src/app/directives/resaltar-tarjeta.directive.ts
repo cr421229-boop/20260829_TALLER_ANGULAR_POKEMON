@@ -4,7 +4,7 @@ import { Directive, ElementRef,HostListener, inject, input } from '@angular/core
   selector: '[appResaltarTarjeta]',
   standalone: true
 })
-export class ResaltarTarjetaDirective {
+export class ResaltarTarjeta{
 
   private el = inject(ElementRef);
   
