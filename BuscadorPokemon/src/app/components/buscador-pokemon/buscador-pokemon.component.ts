@@ -16,7 +16,7 @@ export class BuscadorPokemonComponent {
 
   pokemonService = inject(PokemonStorageService);
 
-  nombrePokemonInput = ''
+  nombrePokemonInput = '';
   pokemon = signal<PokemonTarjeta | null>(null);
   mensajeError = signal<string | null>(null);
   cargando = signal(false);

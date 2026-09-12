@@ -27,7 +27,7 @@ export interface Usuario {
 })
 export class RegistroUsuarioComponent {
   nombre = '';
-  apellido = '';
+  apellido = ''
   pais = '';
   ciudad = '';
   tipo_documento = '';
