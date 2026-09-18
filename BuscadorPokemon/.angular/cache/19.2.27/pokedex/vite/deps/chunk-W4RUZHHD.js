@@ -1,19 +1,19 @@
 import {
   withHttpTransferCache
-} from "./chunk-KQ5OVL46.js";
+} from "./chunk-PFAXO4U4.js";
 import {
   CommonModule,
   DomAdapter,
   getDOM,
   setRootDomAdapter
-} from "./chunk-SFJOKGQE.js";
+} from "./chunk-EDRFSIK7.js";
 import {
   DOCUMENT,
   PLATFORM_BROWSER_ID,
   XhrFactory,
   isPlatformServer,
   parseCookieValue
-} from "./chunk-AS7H4UEL.js";
+} from "./chunk-E2JZW3R3.js";
 import {
   APP_ID,
   ApplicationModule,
@@ -74,9 +74,9 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-3ZEMIUMS.js";
+} from "./chunk-HTM77VD3.js";
 
-// node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs
+// node_modules/.pnpm/@angular+platform-browser@19.2.25_@angular+animations@19.2.25_@angular+common@19.2.25_@_03920cd03c489213fb05b5fcb604c13f/node_modules/@angular/platform-browser/fesm2022/dom_renderer-DGKzginR.mjs
 var EVENT_MANAGER_PLUGINS = new InjectionToken(ngDevMode ? "EventManagerPlugins" : "");
 var EventManager = class _EventManager {
   _zone;
@@ -786,7 +786,7 @@ var EmulatedEncapsulationDomRenderer2 = class extends NoneEncapsulationDomRender
   }
 };
 
-// node_modules/@angular/platform-browser/fesm2022/browser-0WrrQdE0.mjs
+// node_modules/.pnpm/@angular+platform-browser@19.2.25_@angular+animations@19.2.25_@angular+common@19.2.25_@_03920cd03c489213fb05b5fcb604c13f/node_modules/@angular/platform-browser/fesm2022/browser-0WrrQdE0.mjs
 var BrowserDomAdapter = class _BrowserDomAdapter extends DomAdapter {
   supportsDOMEvents = true;
   static makeCurrent() {
@@ -1229,7 +1229,7 @@ var BrowserModule = class _BrowserModule {
   }], () => [], null);
 })();
 
-// node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
+// node_modules/.pnpm/@angular+platform-browser@19.2.25_@angular+animations@19.2.25_@angular+common@19.2.25_@_03920cd03c489213fb05b5fcb604c13f/node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 var Meta = class _Meta {
   _doc;
   _dom;
@@ -2018,4 +2018,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-KFHM5OMW.js.map
+//# sourceMappingURL=chunk-W4RUZHHD.js.map
