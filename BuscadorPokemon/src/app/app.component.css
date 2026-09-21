@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=DM+Sans:wght@400;500;700&display=swap');
+
+:host {
+  display: block;
+  --abismo: #053b40;
+  --marino: #0a6c70;
+  --laguna: #3ddcb4;
+  --aguamarina: #7fffd4;
+  --espuma: #eafff8;
+}
+
+/* ---------- Barra superior (72px fijos) ---------- */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 72px;
+  box-sizing: border-box;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(4, 47, 51, 0.92);
+  border-bottom: 1px solid rgba(127, 255, 212, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.barra-titulo {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--aguamarina);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Navegación ---------- */
+.barra-nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 6px;
+  list-style: none;
+}
+
+.barra-nav a {
+  display: block;
+  padding: 8px 18px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--espuma);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.barra-nav a:hover {
+  background: rgba(127, 255, 212, 0.16);
+}
+
+/* Página actual */
+.barra-nav a.active {
+  color: var(--abismo);
+  background: var(--aguamarina);
+}
+
+.barra-nav a:focus-visible {
+  outline: 3px solid var(--aguamarina);
+  outline-offset: 2px;
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 640px) {
+  .barra {
+    padding: 0 12px;
+  }
+  .barra-titulo {
+    font-size: 1.05rem;
+  }
+  .barra-nav a {
+    padding: 8px 12px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barra-nav a {
+    transition: none;
+  }
+}

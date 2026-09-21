@@ -1,21 +1,19 @@
-<section>
+<section class="registro">
   <h1 id="titulo_formulario">Formulario de Contacto</h1>
 
-  <form id="form_contacto" (ngSubmit)="guardarUsuario()">
-    <div id="Nombre">
-      <label for="nombre">Nombre:</label><br>
+  <form id="form_contacto" class="form-registro" (ngSubmit)="guardarUsuario()">
+    <div id="Nombre" class="campo">
+      <label for="nombre">Nombre</label>
       <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ej: Juan" required>
     </div>
-    <br>
 
-    <div id="Apellido">
-      <label for="apellido">Apellido:</label><br>
+    <div id="Apellido" class="campo">
+      <label for="apellido">Apellido</label>
       <input type="text" id="apellido" name="apellido" [(ngModel)]="apellido" placeholder="Ej: Pérez" required>
     </div>
-    <br>
 
-    <div id="Tipo_identificacion">
-      <label for="tipo_identificacion">Tipo de Identificación:</label><br>
+    <div id="Tipo_identificacion" class="campo">
+      <label for="tipo_identificacion">Tipo de identificación</label>
       <select id="tipo_identificacion" name="tipo_identificacion" [(ngModel)]="tipo_documento" required>
         <option value="" disabled selected>Seleccione una opción</option>
         <option value="13 - Cédula de Ciudadanía (CC)">Cédula de Ciudadanía (CC)</option>
@@ -23,28 +21,24 @@
         <option value="41 - Pasaporte (PA)">Pasaporte (PA)</option>
       </select>
     </div>
-    <br>
 
-    <div id="Numero_identificacion">
-      <label for="numero_identificacion">Número de Identificación:</label><br>
+    <div id="Numero_identificacion" class="campo">
+      <label for="numero_identificacion">Número de identificación</label>
       <input type="text" id="numero_identificacion" name="numero_de_identificacion" [(ngModel)]="numero_de_identificacion" placeholder="Ej: 1020304050" required>
     </div>
-    <br>
 
-    <div id="Fecha_nacimiento">
-      <label for="fecha_nacimiento">Fecha de Nacimiento:</label><br>
+    <div id="Fecha_nacimiento" class="campo">
+      <label for="fecha_nacimiento">Fecha de nacimiento</label>
       <input type="date" id="fecha_nacimiento" name="fecha_de_nacimiento" [(ngModel)]="fecha_de_nacimiento" required>
     </div>
-    <br>
 
-    <div id="Celular">
-      <label for="celular">Número de Celular:</label><br>
+    <div id="Celular" class="campo">
+      <label for="celular">Número de celular</label>
       <input type="tel" id="celular" name="numero_de_celular" [(ngModel)]="numero_de_celular" pattern="[0-9]{10}" placeholder="3001234567" required>
     </div>
-    <br>
 
-    <div id="Pais">
-      <label for="pais">País:</label><br>
+    <div id="Pais" class="campo">
+      <label for="pais">País</label>
       <select id="pais" name="pais" [(ngModel)]="pais" required>
         <option value="" disabled>Seleccionar</option>
         <option value="169 - Colombia">Colombia</option>
@@ -52,10 +46,9 @@
         <option value="589 - Perú">Perú</option>
       </select>
     </div>
-    <br>
 
-    <div id="Ciudad">
-      <label for="ciudad">Ciudad:</label><br>
+    <div id="Ciudad" class="campo">
+      <label for="ciudad">Ciudad</label>
       <select id="ciudad" name="ciudad" [(ngModel)]="ciudad" required>
         <option value="" disabled selected>Seleccione una opción</option>
         <optgroup label="Colombia">
@@ -81,28 +74,26 @@
         </optgroup>
       </select>
     </div>
-    <br>
 
-    <div id="Politica_datos">
+    <div id="Politica_datos" class="campo campo-check ancho-completo">
       <input type="checkbox" id="politica_datos" name="politica_datos" [(ngModel)]="datos_personales" required>
       <label for="politica_datos">Acepto la política de tratamiento de datos.</label>
     </div>
-    <br>
 
-    <div id="Submit">
-      <button type="submit" id="boton_enviar">Enviar</button>
+    <div id="Submit" class="ancho-completo">
+      <button type="submit" id="boton_enviar" class="btn-enviar">Enviar</button>
     </div>
   </form>
 
   @if (ultimoUsuario(); as user) {
-    <div id="usuario-registrado">
-      <h2>Usuario Registrado:</h2>
-      <p><strong>Nombre Completo:</strong> {{ user.nombreCompleto }}</p>
-      <p><strong>Lugar de Nacimiento:</strong> {{ user.LugarNacimiento.pais }}, {{ user.LugarNacimiento.ciudad }}</p>
+    <div id="usuario-registrado" class="usuario-registrado">
+      <h2>Usuario registrado</h2>
+      <p><strong>Nombre completo:</strong> {{ user.nombreCompleto }}</p>
+      <p><strong>Lugar de nacimiento:</strong> {{ user.LugarNacimiento.pais }}, {{ user.LugarNacimiento.ciudad }}</p>
       <p><strong>Documento:</strong> {{ user.documento.tipo }} - {{ user.documento.numero }}</p>
-      <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha }}</p>
-      <p><strong>Número de Celular:</strong> {{ user.numero }}</p>
-      <p><strong>Fecha de Registro:</strong> {{ user.fechaRegistro }}</p>
+      <p><strong>Fecha de nacimiento:</strong> {{ user.fecha }}</p>
+      <p><strong>Número de celular:</strong> {{ user.numero }}</p>
+      <p><strong>Fecha de registro:</strong> {{ user.fechaRegistro }}</p>
     </div>
   }
 </section>
